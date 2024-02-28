@@ -1,0 +1,12 @@
+# Preface {.unnumbered}
+
+- Reasons
+- Neural Networks 
+   - Perceptron 
+   - Layers etc
+   - examples
+- Training
+   - backpropagation
+   - overfitting/underfitting
+   - losses
+- Convolutional Neural Networks

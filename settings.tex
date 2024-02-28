@@ -1,0 +1,38 @@
+% --- Layout e formattazione generale ---
+\usepackage[a4paper, landscape, twocolumn, margin=1.5cm, columnsep=1cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+
+% --- Matematica ---
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{simplebnf}
+\numberwithin{equation}{section}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+\usepackage{ebproof}
+
+% --- Teoremi, definizioni e ambienti ---
+\newenvironment{example}{
+    \begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=\bfseries Example]
+}{
+    \end{tcolorbox}
+}
+\newenvironment{exam}{
+    \begin{tcolorbox}[colback=gray!5!white,colframe=gray!75!black,title=\bfseries
+        Exam]
+}{
+    \end{tcolorbox}
+}
+\newtcbtheorem{Definition}{Definition}%
+{colback=red!5!white,colframe=red!75!black,fonttitle=\bfseries}{}
+\newtcbtheorem{Theorem}{Theorem}%
+{colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries}{}
+
+% --- Grafica e disegni ---
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{wrapfig}
+\usepackage{neuralnetwork}

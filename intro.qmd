@@ -1,0 +1,12 @@
+# Introduction
+
+
+```{mermaid}
+%%| fig-align: center
+graph LR
+  A((X1)) -- W1 --> C(Σ)
+  B((X2)) -- W2 --> C
+  Y((Xn)) -- Wn --> C
+  Bias((+1)) -- b --> C
+  C --> | Activation function | D((output))
+```

@@ -1,0 +1,270 @@
+\documentclass{article}
+\input{settings.tex}
+
+\author{Alessio Arcara}
+\begin{document}
+\begin{titlepage}
+    \vspace*{\fill}
+   \centering
+   \Huge Languages and Algorithms for Artificial Intelligence\\
+   \Large Alessio Arcara
+
+   \mbox{}
+
+   \begin{center}
+       \includegraphics[width=0.4\linewidth]{prolog_meme}
+   \end{center}
+    \vspace*{\fill}
+\end{titlepage}
+\pagenumbering{gobble}
+
+\tableofcontents
+\clearpage
+
+\pagenumbering{arabic}
+\parindent 0pt
+
+\cleardoublepage
+\section{Course info}
+Deep learning is a branch of machine learning, where we just use neural
+networks and generally involves in use of many nested layers on them.
+
+Usually them excel when we have a lot of data and a lot of features because
+they exploit the so called deep feature of data, i.e automatic extraction of
+other features from a preliminary set of given features and that can be
+interesting if a feature can contribute very small but the combination of
+multiple of them can be relevant, think for example if he wave an image with
+some pixels. Maybe a pixel isn't so interesting, but the combination of many
+pixels can denote maybe a border and that is the so called deep feature.
+
+we do not have the theory of what is a span (algebra)
+meta-knowledge 
+
+belongs to a class of models
+parametric description of a model 
+optimization of parameters
+
+we define a way to compare the models (loss function) to evaluate the results
+of the models 
+
+machine learning is just an optimization problem 
+we just need to optimize the parameters and we choose the best one by the loss
+function during the training
+
+it is like to set a benchmark and automatize i 
+
+- 1) parametric class of models 
+- 2) define a way to compare the models (loss)
+- 3) automatize it via optimization
+
+why we are talking about learning 
+
+we do not know the optimal solution in analytic form (closed form solution)
+but we use iterative techniques, this iterations can be thought as progressive
+learning. 
+
+we need to thought the loss function on the parameters of the model 
+
+
+3 different of learning:
+- supervised learning (inputs+outputs) -> a mapping
+ -- classification (discrete)
+ -- regression (continuous)
+- unsupervised learning (inputs) -> a distribution describing the data
+- reinforcement learning (actions and rewards) -> behaviour of the agent
+--  you have an agent interacting with an environment, it decides an action
+(behaviour of the agent, we define them), an action modify the environment 
+-- when you do an action you receive a reward 
+-- you optimize the sum of cumulative rewards defined a behaviour of an agent.
+
+-- discriminative techniques (in or outside of boundary)
+-- generative techniques (you are interested in distribution of data)
+-- component analysis (what features are important)
+
+it's a zoo, a lot of techniques etc 
+
+define a class of models 
+define a loss function (what is a good distance to compare vectors, a good
+notion of similarity between the vectors)
+
+two probabilities distribution, how to compare these two distribution?
+quadratic distance, but there are other distances.
+
+this notion of similarity IS IMPORTANT, is never a trivial question 
+recursive
+SHORT INTRODUCTION OF NEURAL NETWORKS:
+it is a network of artificial neurons
+
+each neuron takes multiple inputs, it weights its inputs and combine them + 1
+bias and then the weighted combination if passed to an activation function to
+give an output.
+
+the simplest activation function is logistic one 
+sigma(wx+b)
+
+there are different kind of activation functions
+it is important to be a non linear function 
+
+composing of linear functions is just a linear function and doesn't increase
+the power of neural network, so it is important to use non linear functions.
+
+binary threshold (1950 definition, is not a good function because of its
+derivation)
+logistic 
+hyperbolic tangent -1 1 
+relu
+
+Dendrites (inputs)
+Neuron weighted sum 
+Axon binary threshold
+
+PHOTO
+
+human brains 
+slow (chemical operation)
+
+TOPOLOGY
+types of neural networks
+
+
+the semantic of feed-forward neural network is clear when you have cycles it
+is a mess. to get its meaning we observe its output correlated with its
+states.
+brain has cycles in it, we do not know how cycles are structured.
+
+transformers are feed-forward neural networks, 95\% of applications  use
+feed-forward neural networks
+
+feed-forward neural network single flow of information (from input to ouput)
+recurrent
+
+LAYERS 
+in feed-forward networks, neurons are usually organized in layers. 
+if there is more than one hidden layer is called shallow, or otherwise is deep
+
+input 
+hidden layer 
+output layer 
+
+DENSE layer (fully connected)
+ each neuron at layer k-1 is connected to each neuron at k 
+ one neuron 
+ $$I^n\cdot W^n+B^1=O^1$$
+ the operation can be vectorized to produce m outputs in parallel
+ $$I^n\cdot W^{n\times m}+B^{m}=O^m$$
+ just an algebric computation
+ dense layers usually work on flat (unstructured inputs)
+ the order of elements in a dense layer is completely irrilevant
+
+ the problem of a dense layer is that you have an huge amount of parameters 
+ 1000 inputs 1000 outputs = 1million of parameters
+CONVOLUTIONAL layers
+
+each neuron at layer k-1 is connected to a fixed subset of neurons at layer k.
+it is like the operation of convolution applying a kernel that is parametric
+(learned during training)
+
+the advantage is that we have less number of parameters (the kernel) that give
+a feature map (the output)
+
+FEATURES AND DEEP FEATURES 
+Any individual measurable property of data useful for the solution of a
+specific task is called a feature
+
+In deep learning each layer synthesize new features in terms of the previous
+ones in non linear elaborations.
+
+the output of a hidden layer is so called deep features 
+and that is the big difference between dl and other systems
+
+KNOWLEDGE BASED SYSTEMS take an expert ask him to solve a problem and try to
+mimic his approach by means of logical rules.
+MACHINE LEARNING SYSTEMS ask the experts to get a good set of features
+DEEP LEARNING get rid of the experts :)
+
+just let the machine do the work for you 
+
+in deep learning we have an encoding part 
+and after decoding part, you use the information that you have extracted
+
+1950 perceptron binary threshold activation function
+
+ReLU and Dropout
+Attention
+BatchNormalization
+Residual connections
+YOLO v1: inceptionNet
+DQN -> AlphaGo -> PPO -> Soft Actor Critic -> AlphaStar
+
+when we are able to sample data from a learned distribution. 
+
+
+paperswithcode to find interesting datasets for a particular task
+
+\section{Example of successful applications}
+IMAGE 
+
+* classification 
+* segmentation -> connected components (each pixels) -> separate also
+different objects
+
+\section{Introduction}
+
+The generation is a continuous operation, a small movement correspond to a
+tiny small modification
+
+latent space interpolation -> move -> result 
+between faces you lose quality
+
+\paragraph{Perceptron.}
+
+The perceptron: binary threshold activation function
+
+\begin{figure}[!ht]
+    \centering
+    \begin{neuralnetwork}[height=4]
+        \newcommand{\nodetextclear}[2]{}
+        \newcommand{\nodetextx}[2]{$x_#2$}
+        \newcommand{\nodetexty}[2]{$y_#2$}
+        \inputlayer[count=3, bias=false, title=Input\\layer, text=\nodetextx]
+        \hiddenlayer[count=4, bias=false, title=Hidden\\layer, text=\nodetextclear] \linklayers
+        \outputlayer[count=2, title=Output\\layer, text=\nodetexty] \linklayers
+    \end{neuralnetwork}
+    \caption{Struttura di una rete neurale con uno strato nascosto} 
+    \label{fig:neural_network}
+\end{figure}
+
+$$
+\begin{aligned}
+    \text{output}=\begin{cases}
+        1 & \text{if}\displaystyle\sum_{i} w_ix_i+b\geq 0 \\ 
+        0 & \text{otherwise}
+    \end{cases}
+    & 
+    \text{output}=\begin{cases}
+        1 & \text{if}\displaystyle\sum_{i} w_ix_i\geq -b \\ 
+        0 & \text{otherwise}
+    \end{cases}
+\end{aligned}
+$$
+
+---- deadline 2/3 march
+NOTES STRUCTURE:
+
+- Reasons
+
+- NEURAL NETWORKS 
+   - PERCEPTRON
+   - LAYERS ETC
+   - examples
+
+- Training
+   - backpropagation
+   - overfitting/underfitting
+   - losses
+
+- CNN
+
+etc
+----
+\end{document}

@@ -1,0 +1,23 @@
+project:
+  type: book
+
+book:
+  title: "Deep Learning"
+  author: "Alessio Arcara"
+  date: "2/27/2024"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - training.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+
